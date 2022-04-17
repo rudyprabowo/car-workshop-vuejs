@@ -1,11 +1,12 @@
 <template>
   <form class="form-signin text-center" @submit.prevent="submit()">
+      <!-- src="https://getbootstrap.com/docs/5.1/assets/brand/bootstrap-logo.svg" -->
     <img
       class="mb-4"
-      src="https://getbootstrap.com/docs/5.1/assets/brand/bootstrap-logo.svg"
+      src="/images/logo.png"
       alt=""
-      width="72"
-      height="57"
+      width="150"
+      height="100"
     />
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
