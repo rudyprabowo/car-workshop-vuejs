@@ -24,6 +24,21 @@ Gunakan `npm install` untuk menginstal dependency yang digunakan oleh aplikasi.
 
 Gunakan `npm run serve` untuk menjalankan aplikasi.
 
+## Postman Collection link
+
+Postman collection link dapat di akses di [Postman Link](https://www.postman.com/gold-spaceship-719355/workspace/car-workshop/collection/16924922-af7b1ad8-f941-4641-b046-454c11b1465c?action=share&creator=16924922)
+
+Note: untuk bisa menjalankan postman, aplikasi laravel dan database harus sudah running
+
+## Entity Relationship Diagram
+
+![Entity Relationship Diagram for car-workshop application](https://github.com/rudyprabowo/car-workshop-laravel/blob/main/ERD%20Car%20Workshop.png)
+
+## State Machine Diagram
+
+![Entity Relationship Diagram for car-workshop application](https://github.com/rudyprabowo/car-workshop-laravel/blob/main/Car%20Workshop%20State%20Machine%20Diagram.jpg)
+
+
 ## Project setup
 ```
 yarn install
