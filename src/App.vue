@@ -1,30 +1,37 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <NavBar />
+  <main class="">
+    <router-view />
+  </main>
 </template>
 
+<script>
+import NavBar from "@/components/NavBar.vue";
+
+export default {
+  components: { NavBar },
+};
+</script>
+
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+/* Signin Style */
+html,
+body {
+  height: 100%;
 }
 
-nav {
-  padding: 30px;
+main {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+body {
+  background-color: #f5f5f5;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
+/* End Signin Style */
 </style>
+
+

@@ -1,18 +1,36 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <!-- {{ message }} -->
+    Home
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+// import { onMounted, ref } from "vue";
 
-export default defineComponent({
-  name: 'HomeView',
-  components: {
-    HelloWorld,
-  },
-});
+export default {
+  name: "HomeView",
+  // setup() {
+  //   const message = ref("You are not login.");
+
+  //   onMounted(async () => {
+  //     await fetch("http://127.0.0.1:8000/api/auth/profile", {
+  //       method: "GET",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       credentials: 'include',
+  //     });
+
+  //     // const content = await response.json();
+
+  //     // message.value = `Hi ${content.name}`;
+  //   });
+  
+
+  //   return {
+  //     message,
+  //   }
+  // },
+};
 </script>
