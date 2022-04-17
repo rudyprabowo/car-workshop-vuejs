@@ -1,8 +1,7 @@
 <template>
   <NavBar />
-  <main class="">
-    <router-view />
-  </main>
+      <router-view />
+
 </template>
 
 <script>
@@ -28,7 +27,8 @@ main {
   padding-bottom: 40px;
 }
 body {
-  background-color: #f5f5f5;
+  background-color: #f5f5f5 !important;
+  /* background-color: red ; */
 }
 
 /* End Signin Style */
