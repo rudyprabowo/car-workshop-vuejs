@@ -55,7 +55,7 @@ export default {
 
     const auth = computed(()=> store.state.authenticated);
 
-    const token = "23|jEwwukEP0aS969Jc2qXfSz5POX7f9rOP8zaZ4rHL";
+    const token = "37|d2YWzPBLuW0fMHRFuTTJXbZIBuXskEl2boiNAqYk";
 
     const logout = async() => {
         await fetch("http://127.0.0.1:8000/api/logout", {

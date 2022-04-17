@@ -66,7 +66,7 @@ export default {
 
     const store = useStore();
 
-    const token = "23|jEwwukEP0aS969Jc2qXfSz5POX7f9rOP8zaZ4rHL";
+    const token = "37|d2YWzPBLuW0fMHRFuTTJXbZIBuXskEl2boiNAqYk";
 
     onMounted(async () => {
       try{
