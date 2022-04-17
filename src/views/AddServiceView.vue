@@ -75,6 +75,8 @@
 <script lang="ts">
 import { reactive } from "vue";
 import { useRouter } from "vue-router";
+import { useStore } from 'vuex';
+import { computed } from 'vue';
 
 export default {
   name: "RegisterView",
@@ -88,14 +90,19 @@ export default {
 
     const router = useRouter();
 
-    const token = "37|d2YWzPBLuW0fMHRFuTTJXbZIBuXskEl2boiNAqYk";
+    const store = useStore();
+
+    const token2 = computed(()=> store.state.token);
+    const token3 = token2.value;
+
+    // const token = "37|d2YWzPBLuW0fMHRFuTTJXbZIBuXskEl2boiNAqYk";
 
     const submit = async () => {
       await fetch("http://127.0.0.1:8000/api/services", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          'Authorization': 'Bearer ' + token
+          'Authorization': 'Bearer ' + token3
         },
         credentials: 'include',
 

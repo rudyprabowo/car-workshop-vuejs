@@ -23,20 +23,15 @@
               >Register</router-link
             >
           </li>
-          <li class="nav-item">
-            <router-link to="/profile" class="nav-link active"
-              >Profile</router-link
-            >
-          </li>
         </ul>
         <ul class="navbar-nav me-auto mb-2 mb-md-0" v-if="auth">
           <li class="nav-item">
-            <router-link to="/login" class="nav-link active" @click="logout">Logout</router-link>
-          </li>
-          <li class="nav-item">
             <router-link to="/profile" class="nav-link active"
               >Profile</router-link
             >
+          </li>
+          <li class="nav-item">
+            <router-link to="/login" class="nav-link active" @click="logout">Logout</router-link>
           </li>
         </ul>
       </div>
@@ -55,17 +50,23 @@ export default {
 
     const auth = computed(()=> store.state.authenticated);
 
-    const token = "37|d2YWzPBLuW0fMHRFuTTJXbZIBuXskEl2boiNAqYk";
+    const token2 = computed(()=> store.state.token);
+    const token3 = token2.value;
+
+    // const token = "37|d2YWzPBLuW0fMHRFuTTJXbZIBuXskEl2boiNAqYk";
 
     const logout = async() => {
         await fetch("http://127.0.0.1:8000/api/logout", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          'Authorization': 'Bearer ' + token
+          'Authorization': 'Bearer ' + token3
         },
         credentials: 'include',
       });
+
+      store.dispatch('setToken', "Token Removed");
+
     }
 
     return{

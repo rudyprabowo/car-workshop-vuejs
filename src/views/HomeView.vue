@@ -35,7 +35,7 @@
                     </thead>
                     <tbody>
                         <tr v-for="(service,index) in services" :key="service.id">
-                            <td data-label="No"> <span>{{ index }}</span> </td>
+                            <td data-label="No"> <span>{{ index+1 }}</span> </td>
                             <td data-label="Job Title"> <img alt="..." src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2"> <span>{{ service.customer_id }}</span></td>
                             <td data-label="Email"> <span>{{service.car_name}} <br> {{service.car_plate_number}}</span> </td>
                             <td data-label="Phone"> <span>{{service.car_in_workshop}}</span> </td>
@@ -55,6 +55,7 @@
 <script lang="ts">
 import { onMounted, ref } from "vue";
 import { useStore } from 'vuex';
+import { computed } from 'vue';
 
 export default {
   name: "HomeView",
@@ -66,7 +67,10 @@ export default {
 
     const store = useStore();
 
-    const token = "37|d2YWzPBLuW0fMHRFuTTJXbZIBuXskEl2boiNAqYk";
+    const token2 = computed(()=> store.state.token);
+    const token3 = token2.value;
+
+    // const token = "37|d2YWzPBLuW0fMHRFuTTJXbZIBuXskEl2boiNAqYk";
 
     onMounted(async () => {
       try{
@@ -74,7 +78,7 @@ export default {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          'Authorization': 'Bearer ' + token
+          'Authorization': 'Bearer ' + token3
         },
         credentials: 'include',
       });

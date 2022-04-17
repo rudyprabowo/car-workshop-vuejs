@@ -16,6 +16,7 @@
 <script lang="ts">
 import { onMounted, ref } from "vue";
 import { useStore } from 'vuex';
+import { computed } from 'vue';
 
 export default {
   name: "ProfileView",
@@ -28,7 +29,10 @@ export default {
 
     const store = useStore();
 
-    const token = "37|d2YWzPBLuW0fMHRFuTTJXbZIBuXskEl2boiNAqYk";
+    const token2 = computed(()=> store.state.token);
+    const token3 = token2.value;
+
+    // const token = "37|d2YWzPBLuW0fMHRFuTTJXbZIBuXskEl2boiNAqYk";
 
     onMounted(async () => {
       try{
@@ -36,7 +40,7 @@ export default {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          'Authorization': 'Bearer ' + token
+          'Authorization': 'Bearer ' + token3
         },
         credentials: 'include',
       });

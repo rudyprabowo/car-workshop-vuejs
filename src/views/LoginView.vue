@@ -54,6 +54,7 @@
 <script lang="ts">
 import { reactive} from "vue";
 import { useRouter } from "vue-router";
+import { useStore } from 'vuex';
 
 export default {
   name: "LoginView",
@@ -65,12 +66,14 @@ export default {
     });
 
     const router = useRouter();
+
+    const store = useStore();
     
 
     const submit = async () => {
       // await fetch("http://127.0.0.1:8000/api/auth/login", { //aslinya //salah karena make auth
-      // const response = await fetch("http://127.0.0.1:8000/api/login", { //coba //benar
-      await fetch("http://127.0.0.1:8000/api/login", { //coba //benar
+      const response = await fetch("http://127.0.0.1:8000/api/login", { //coba //benar
+      // await fetch("http://127.0.0.1:8000/api/login", { //coba //benar
         method: "POST",
         headers: { "Content-Type": "application/json","Access-Control-Allow-Origin": "*",
           "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS",
@@ -80,11 +83,12 @@ export default {
         body: JSON.stringify(data),
       });
 
+      const dataToken = await response.json();
+      const token = dataToken.token;
       
-      // const dataToken = await response.json();
-      // const token = dataToken.token;
-      
-      // console.log('token :'+token);
+      console.log('token :'+token);
+
+      store.dispatch('setToken', token);
       
 
       //redirect to home
