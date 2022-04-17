@@ -85,7 +85,7 @@ export default {
 
     const submit = async () => {
       // await fetch("http://127.0.0.1:8000/api/auth/register", { //salah
-      await fetch("http://127.0.0.1:8000/api/auth/register", {
+      await fetch("http://127.0.0.1:8000/api/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         // headers: { "Accept": "application/json" },
