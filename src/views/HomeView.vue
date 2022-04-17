@@ -1,9 +1,18 @@
 <template>
+
   <div class="p-10">
     <div class="container">
         <div class="card">
             <div class="card-header">
-                <h3>Services</h3>
+              <div class="row">
+                <div class="col">
+                  <h3>Services</h3>
+                </div>
+                <div class="col">
+                  <router-link to="/addservice" class="btn btn-danger float-end">Add New Service
+                  </router-link>
+                </div>
+              </div>
             </div>
             <div class="table-responsive">
               <!-- <div v-for="(service, index) in services" :key="service.id">
